@@ -720,4 +720,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RaycastPrefab: {fileID: 0}
+  m_RaycastPrefab: {fileID: 919132149155446097, guid: 0c99fcf5e6bb0f14f9bdaabebf624eab,
+    type: 3}
