@@ -50,6 +50,7 @@ static List<ARRaycastHit> hits = new List<ARRaycastHit>();
                 SpawnedGhost.transform.position = hitPose.position;
             }
         }
+        SpawnedGhost.transform.LookAt(Camera.main.transform);
 
     }
 }
