@@ -42,6 +42,21 @@ static List<ARRaycastHit> hits = new List<ARRaycastHit>();
                 lookCamera();
             }
         lookCamera();
+        checkKill();
+
+    }
+
+    void lookCamera(){
+        Vector3 ghostPosition = SpawnedGhost.transform.position;
+        ghostPosition.y = 0f;
+        cameraPosition.y = 0f;
+        Vector3 direction = cameraPosition - ghostPosition;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        SpawnedGhost.transform.rotation = targetRotation;
+
+    }
+
+    void checkKill(){
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -54,16 +69,5 @@ static List<ARRaycastHit> hits = new List<ARRaycastHit>();
                 }
             }
         }
-
-    }
-
-    void lookCamera(){
-        Vector3 ghostPosition = SpawnedGhost.transform.position;
-        ghostPosition.y = 0f;
-        cameraPosition.y = 0f;
-        Vector3 direction = cameraPosition - ghostPosition;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        SpawnedGhost.transform.rotation = targetRotation;
-
     }
 }
