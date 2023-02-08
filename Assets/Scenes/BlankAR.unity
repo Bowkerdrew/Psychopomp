@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a0676605f014a42bbf12a19cc707c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 8690698753568328036, guid: 83759e0393a627a45838de9634787703, type: 3}
+  ghost: {fileID: 919132149155446097, guid: 0709e7db5c497c54e800b4eb57a07287, type: 3}
 --- !u!114 &1659859602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RaycastPrefab: {fileID: 919132149155446097, guid: 0c99fcf5e6bb0f14f9bdaabebf624eab,
+  m_RaycastPrefab: {fileID: 919132149155446097, guid: 0709e7db5c497c54e800b4eb57a07287,
     type: 3}
 --- !u!114 &1659859603
 MonoBehaviour:
