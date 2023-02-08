@@ -15,9 +15,9 @@ public class CreateGhost : MonoBehaviour
     private Vector2 touchPosition;
 
     private Vector3 cameraPosition;
+    public float speed = 0.05f;
 
-
-static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     // Update is called once per frame
 
     private void Awake(){
@@ -32,18 +32,30 @@ static List<ARRaycastHit> hits = new List<ARRaycastHit>();
         touchPosition = default;
         return false;
     }
-
+    void Start()
+    {
+        
+        ghost.AddComponent<BoxCollider>();
+    }
     void Update()
     {
         cameraPosition = Camera.main.transform.position;
-            if(SpawnedGhost == null)
-            {
-                SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
-                lookCamera();
-            }
-        lookCamera();
-        checkKill();
+        if (SpawnedGhost == null)
+        {
+            SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
+            lookCamera();
+        }
 
+        if (SpawnedGhost != null)
+        {
+            SpawnedGhost.transform.LookAt(Camera.main.transform.position);
+            SpawnedGhost.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
+
+
+    lookCamera();
+        checkKill();
+       
     }
 
     void lookCamera(){
@@ -57,18 +69,26 @@ static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     }
 
     void checkKill(){
-        //if (Input.GetMouseButtonDown(0))
-        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+
+        if (Input.touchCount > 0)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
             {
-                if (hit.transform.gameObject == SpawnedGhost)
+                List<ARRaycastHit> hits = new List<ARRaycastHit>();
+                if (_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
                 {
-                    SpawnedGhost.SetActive(false);
+                    Pose hitPose = hits[0].pose;
+                    Vector3 ghostPosition = SpawnedGhost.transform.position;
+
+                    if (Vector3.Distance(hitPose.position, ghostPosition) < 0.1f)
+                    {
+                        Destroy(SpawnedGhost);
+                        SpawnedGhost = null;
+                    }
                 }
             }
-        }
+
+        }  
     }
 }
