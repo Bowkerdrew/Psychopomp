@@ -14,6 +14,8 @@ public class CreateGhost : MonoBehaviour
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
 
+    private Vector3 cameraPosition;
+
 
 static List<ARRaycastHit> hits = new List<ARRaycastHit>();
     // Update is called once per frame
@@ -33,24 +35,35 @@ static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     void Update()
     {
-        if(!TryGetTouchPosition(out Vector2 touchPosition)){
-            return;
-        }
-        if(_arRaycastManager.Raycast(touchPosition, hits, trackableTypes: TrackableType.PlaneWithinPolygon))
-        {
-
-            var hitPose = hits[0].pose;
-
+        cameraPosition = Camera.main.transform.position;
             if(SpawnedGhost == null)
             {
-                SpawnedGhost = Instantiate(ghost, hitPose.position, hitPose.rotation);
+                SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
+                lookCamera();
             }
-            else
+        lookCamera();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                SpawnedGhost.transform.position = hitPose.position;
+                if (hit.transform.gameObject == SpawnedGhost)
+                {
+                    SpawnedGhost.SetActive(false);
+                }
             }
         }
-        SpawnedGhost.transform.LookAt(Camera.main.transform);
+
+    }
+
+    void lookCamera(){
+        Vector3 ghostPosition = SpawnedGhost.transform.position;
+        ghostPosition.y = 0f;
+        cameraPosition.y = 0f;
+        Vector3 direction = cameraPosition - ghostPosition;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        SpawnedGhost.transform.rotation = targetRotation;
 
     }
 }
