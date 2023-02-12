@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(ARRaycastManager))]
 public class CreateGhost : MonoBehaviour
@@ -42,7 +42,11 @@ public class CreateGhost : MonoBehaviour
         cameraPosition = Camera.main.transform.position;
         if (SpawnedGhost == null)
         {
-            SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
+            Vector3 randposition;
+            randposition.x = cameraPosition.x + 1;
+            randposition.y = cameraPosition.y +1;
+            randposition.z = cameraPosition.z;
+            SpawnedGhost = Instantiate(ghost, randposition, Camera.main.transform.rotation);
             lookCamera();
         }
 
@@ -53,9 +57,9 @@ public class CreateGhost : MonoBehaviour
         }
 
 
-    lookCamera();
+        lookCamera();
         checkKill();
-       
+        deathCheck();
     }
 
     void lookCamera(){
@@ -67,7 +71,6 @@ public class CreateGhost : MonoBehaviour
         SpawnedGhost.transform.rotation = targetRotation;
 
     }
-
     void checkKill(){
 
         if (Input.touchCount > 0)
@@ -90,5 +93,10 @@ public class CreateGhost : MonoBehaviour
             }
 
         }  
+    }
+    void deathCheck(){
+        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1){
+            SceneManager.LoadScene("Death");
+        }
     }
 }
