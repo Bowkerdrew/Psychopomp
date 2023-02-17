@@ -134,7 +134,7 @@ public class CreateGhost : MonoBehaviour
      }*/
 
     void deathCheck(){
-        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1 && ){
+        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1){
             SceneManager.LoadScene("Death");
         }
     }
