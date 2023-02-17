@@ -11,8 +11,10 @@ public class CreateGhost : MonoBehaviour
 
     public GameObject ghost;
     private GameObject SpawnedGhost;
+    public int deathCount;
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
+
 
     private Vector3 cameraPosition;
     public float speed = 0.05f;
@@ -95,7 +97,7 @@ public class CreateGhost : MonoBehaviour
         }  
     }
     void deathCheck(){
-        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1){
+        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1 && ){
             SceneManager.LoadScene("Death");
         }
     }
