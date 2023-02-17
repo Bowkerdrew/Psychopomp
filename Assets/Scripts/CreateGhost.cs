@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(ARRaycastManager))]
 public class CreateGhost : MonoBehaviour
@@ -43,8 +43,16 @@ public class CreateGhost : MonoBehaviour
         cameraPosition = Camera.main.transform.position;
         if (SpawnedGhost == null)
         {
+
             SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
             SpawnedGhost.AddComponent<BoxCollider>();
+
+            Vector3 randposition;
+            randposition.x = cameraPosition.x + 1;
+            randposition.y = cameraPosition.y +1;
+            randposition.z = cameraPosition.z;
+            SpawnedGhost = Instantiate(ghost, randposition, Camera.main.transform.rotation);
+
             lookCamera();
         }
 
@@ -52,14 +60,17 @@ public class CreateGhost : MonoBehaviour
         {
             SpawnedGhost.transform.LookAt(Camera.main.transform.position);
             SpawnedGhost.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+            lookCamera();
+
+            CallWhenScreenTouched();
+
+
+
+            lookCamera();
+            checkKill();
+            deathCheck();
         }
-
-
-    lookCamera();
-        //checkKill();
-        CallWhenScreenTouched();
-
-
     }
 
     void lookCamera(){
@@ -71,12 +82,20 @@ public class CreateGhost : MonoBehaviour
         SpawnedGhost.transform.rotation = targetRotation;
 
     }
+
     void CallWhenScreenTouched()
-    {
-        var touch = Input.touches[0];
-        var ray = Camera.main.ScreenPointToRay(touch.position);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo))
+        {
+            var touch = Input.touches[0];
+            var ray = Camera.main.ScreenPointToRay(touch.position);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo)) { }
+
+        }
+
+    void checkKill(){
+
+        if (Input.touchCount > 0)
+
         {
             BoxCollider collider = hitInfo.collider as BoxCollider;
             if (collider != null)
@@ -85,6 +104,7 @@ public class CreateGhost : MonoBehaviour
             }
         }
     }
+
 
 
     /* void checkKill(){
@@ -110,4 +130,11 @@ public class CreateGhost : MonoBehaviour
 
          }  
      }*/
+
+    void deathCheck(){
+        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1){
+            SceneManager.LoadScene("Death");
+        }
+    }
+
 }

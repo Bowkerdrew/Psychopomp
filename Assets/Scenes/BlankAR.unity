@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 1354141929}
   - component: {fileID: 1354141928}
   - component: {fileID: 1354141927}
+  - component: {fileID: 1354141931}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -632,6 +633,18 @@ Transform:
   m_Father: {fileID: 1659859599}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354141931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354141925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3deebe7ad8e7504e9a73e93bccf028f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659859597
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +659,7 @@ GameObject:
   - component: {fileID: 1659859601}
   - component: {fileID: 1659859600}
   - component: {fileID: 1659859603}
+  - component: {fileID: 1659859604}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -734,5 +748,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61e6bc600c4a1d04aa55381be723625b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1659859604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659859597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3deebe7ad8e7504e9a73e93bccf028f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
