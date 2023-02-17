@@ -36,6 +36,7 @@ public class CreateGhost : MonoBehaviour
     {
         
         ghost.AddComponent<BoxCollider>();
+        boxCollider.name = "GhostBoxCollider";
     }
     void Update()
     {
@@ -43,6 +44,7 @@ public class CreateGhost : MonoBehaviour
         if (SpawnedGhost == null)
         {
             SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
+            SpawnedGhost.AddComponent<BoxCollider>();
             lookCamera();
         }
 
@@ -54,8 +56,10 @@ public class CreateGhost : MonoBehaviour
 
 
     lookCamera();
-        checkKill();
-       
+        //checkKill();
+        CallWhenScreenTouched();
+
+
     }
 
     void lookCamera(){
@@ -67,28 +71,43 @@ public class CreateGhost : MonoBehaviour
         SpawnedGhost.transform.rotation = targetRotation;
 
     }
-
-    void checkKill(){
-
-        if (Input.touchCount > 0)
+    void CallWhenScreenTouched()
+    {
+        var touch = Input.touches[0];
+        var ray = Camera.main.ScreenPointToRay(touch.position);
+        RaycastHit hitInfo;
+        if (Physics.Raycast(ray, out hitInfo))
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            BoxCollider collider = hitInfo.collider as BoxCollider;
+            if (collider != null)
             {
-                List<ARRaycastHit> hits = new List<ARRaycastHit>();
-                if (_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-                {
-                    Pose hitPose = hits[0].pose;
-                    Vector3 ghostPosition = SpawnedGhost.transform.position;
-
-                    if (Vector3.Distance(hitPose.position, ghostPosition) < 0.1f)
-                    {
-                        Destroy(SpawnedGhost);
-                        SpawnedGhost = null;
-                    }
-                }
+                collider.name = "MyBoxCollider";
             }
-
-        }  
+        }
     }
+
+
+    /* void checkKill(){
+
+         if (Input.touchCount > 0)
+         {
+             Touch touch = Input.GetTouch(0);
+             if (touch.phase == TouchPhase.Began)
+             {
+                 List<ARRaycastHit> hits = new List<ARRaycastHit>();
+                 if (_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
+                 {
+                     Pose hitPose = hits[0].pose;
+                     Vector3 ghostPosition = SpawnedGhost.transform.position;
+
+                     if (Vector3.Distance(hitPose.position, ghostPosition) < 0.1f)
+                     {
+                         Destroy(SpawnedGhost);
+                         SpawnedGhost = null;
+                     }
+                 }
+             }
+
+         }  
+     }*/
 }
