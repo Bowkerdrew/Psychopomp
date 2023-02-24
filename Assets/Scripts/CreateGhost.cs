@@ -38,7 +38,7 @@ public class CreateGhost : MonoBehaviour
     {
         
         ghost.AddComponent<BoxCollider>();
-        boxCollider.name = "GhostBoxCollider";
+        
     }
     void Update()
     {
@@ -63,17 +63,41 @@ public class CreateGhost : MonoBehaviour
             SpawnedGhost.transform.LookAt(Camera.main.transform.position);
             SpawnedGhost.transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-            lookCamera();
+          
 
+
+
+            lookCamera();
             CallWhenScreenTouched();
-
-
-
-            lookCamera();
             checkKill();
             deathCheck();
         }
+        if (SpawnedGhost != null && SpawnedGhost.GetComponent<Collider>() == null)
+{
+    SpawnedGhost.AddComponent<BoxCollider>();
+}
+
+
     }
+    void CallWhenScreenTouched()
+{
+    if (Input.touchCount > 0)
+    {
+        var touch = Input.GetTouch(0);
+        var ray = Camera.main.ScreenPointToRay(touch.position);
+        RaycastHit hitInfo;
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            if (hitInfo.collider.gameObject == SpawnedGhost) 
+            {
+                Destroy(SpawnedGhost);
+                SpawnedGhost = null;
+            }
+        }
+    }
+}
+
+
 
     void lookCamera(){
         Vector3 ghostPosition = SpawnedGhost.transform.position;
@@ -85,31 +109,9 @@ public class CreateGhost : MonoBehaviour
 
     }
 
-    void CallWhenScreenTouched()
-        {
-            var touch = Input.touches[0];
-            var ray = Camera.main.ScreenPointToRay(touch.position);
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo)) { }
-
-        }
-
-    void checkKill(){
-
-        if (Input.touchCount > 0)
-
-        {
-            BoxCollider collider = hitInfo.collider as BoxCollider;
-            if (collider != null)
-            {
-                collider.name = "MyBoxCollider";
-            }
-        }
-    }
 
 
-
-    /* void checkKill(){
+     void checkKill(){
 
          if (Input.touchCount > 0)
          {
@@ -131,7 +133,7 @@ public class CreateGhost : MonoBehaviour
              }
 
          }  
-     }*/
+     }
 
     void deathCheck(){
         if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1){
