@@ -122,13 +122,13 @@ public class CreateGhost : MonoBehaviour
         readyToThrow = false;
         
 
-        GameObject projectile = Instantiate(holywater,attackPoint.position, cam.rotation);
+        GameObject projectile = Instantiate(holywater,cameraPosition,  Camera.main.transform.rotation);
        
         Debug.Log("Projectile instantiated.");
 
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
 
-        Vector3 forceToAdd = cam.transform.forward * throwForce+ transform.up*throwUpwardForce;
+        Vector3 forceToAdd = Camera.main.transform.forward * throwForce+ transform.up*throwUpwardForce;
 
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
