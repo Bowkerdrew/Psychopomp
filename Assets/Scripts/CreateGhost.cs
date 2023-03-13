@@ -69,10 +69,14 @@ public class CreateGhost : MonoBehaviour
             SpawnedGhost.AddComponent<BoxCollider>();
 
             Vector3 randposition;
-            randposition.x = cameraPosition.x + 1;
-            randposition.y = cameraPosition.y +1;
-            randposition.z = cameraPosition.z;
+            //randposition.x = cameraPosition.x + 1;
+            //randposition.y = cameraPosition.y +1;
+            //randposition.z = cameraPosition.z;
+            float distanceFromCamera = 5f; 
+            randposition = cameraPosition + Camera.main.transform.forward * distanceFromCamera;
             SpawnedGhost = Instantiate(ghost, randposition, Camera.main.transform.rotation);
+
+            
 
             lookCamera();
         }
@@ -142,7 +146,7 @@ public class CreateGhost : MonoBehaviour
         readyToThrow=true;
     }
 
-
+   
 
     void lookCamera(){
         Vector3 ghostPosition = SpawnedGhost.transform.position;
@@ -164,7 +168,8 @@ public class CreateGhost : MonoBehaviour
              if (touch.phase == TouchPhase.Began)
              {
                  List<ARRaycastHit> hits = new List<ARRaycastHit>();
-                 if (_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
+                
+                 if(_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
                  {
                      Pose hitPose = hits[0].pose;
                      Vector3 ghostPosition = SpawnedGhost.transform.position;
@@ -173,6 +178,10 @@ public class CreateGhost : MonoBehaviour
                      {
                          Destroy(SpawnedGhost);
                          SpawnedGhost = null;
+
+                        
+                        
+                           
                      }
                  }
              }
@@ -181,8 +190,21 @@ public class CreateGhost : MonoBehaviour
      }
 
     void deathCheck(){
-        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.1){
+        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.2){
             SceneManager.LoadScene("Death");
+        }
+    }
+    public float destroyDistance = 1f;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("holywater"))
+        {
+            float distance = Vector3.Distance(transform.position, other.transform.position);
+            if (distance < destroyDistance)
+            {
+                Destroy(ghost);
+            }
         }
     }
 
