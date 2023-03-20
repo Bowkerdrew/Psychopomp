@@ -56,17 +56,20 @@ public class CreateGhost : MonoBehaviour
     {
         
         ghost.AddComponent<BoxCollider>();
+        
         readyToThrow=true;
         
     }
     void Update()
     {
         cameraPosition = Camera.main.transform.position;
-        if (SpawnedGhost == null)
+       if (SpawnedGhost == null)
         {
 
-            SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
-            SpawnedGhost.AddComponent<BoxCollider>();
+           // SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
+           //SpawnedGhost.AddComponent<BoxCollider>();
+           
+
 
             Vector3 randposition;
             //randposition.x = cameraPosition.x + 1;
@@ -81,8 +84,8 @@ public class CreateGhost : MonoBehaviour
             lookCamera();
         }
 
-        if (SpawnedGhost != null)
-        {
+        //if (SpawnedGhost != null)
+        //{
             SpawnedGhost.transform.LookAt(Camera.main.transform.position);
             SpawnedGhost.transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
@@ -94,10 +97,15 @@ public class CreateGhost : MonoBehaviour
            
             checkKill();
             deathCheck();
-        }
-        if (SpawnedGhost != null && SpawnedGhost.GetComponent<Collider>() == null)
-        {
-            SpawnedGhost.AddComponent<BoxCollider>();
+      // }
+        //if (SpawnedGhost != null && SpawnedGhost.GetComponent<Collider>() == null)
+        //{
+           // SpawnedGhost.AddComponent<BoxCollider>();
+            //SpawnedGhost.GetComponent<BoxCollider>().isTrigger = true;
+
+        //}
+        if(SpawnedGhost != null){
+           SpawnedGhost.AddComponent<BoxCollider>(); 
         }
 
        // if(Input.GetKeyDown(throwKey)&& readyToThrow && totalThrows > 0)
@@ -203,11 +211,17 @@ public class CreateGhost : MonoBehaviour
             float distance = Vector3.Distance(transform.position, other.transform.position);
             if (distance < destroyDistance)
             {
-                Destroy(ghost);
+                Destroy(SpawnedGhost);
             }
         }
+        
+      
     }
-
-
-
+    
 }
+
+    
+
+
+
+
