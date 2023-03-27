@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a0676605f014a42bbf12a19cc707c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 5268764225957139593, guid: 8d8487553c93e954c9cfdb42f45da2c6, type: 3}
+  ghost: {fileID: 6150615466889157324, guid: debaf4bc757e8a24dbd473a6fc3e6f13, type: 3}
   deathCount: 0
   minThrowSwipeDistance: 0
   cam: {fileID: 1354141930}
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RaycastPrefab: {fileID: 5268764225957139593, guid: 8d8487553c93e954c9cfdb42f45da2c6,
+  m_RaycastPrefab: {fileID: 6150615466889157324, guid: debaf4bc757e8a24dbd473a6fc3e6f13,
     type: 3}
 --- !u!114 &1659859603
 MonoBehaviour:
