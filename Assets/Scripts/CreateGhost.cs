@@ -10,7 +10,9 @@ public class CreateGhost : MonoBehaviour
 {
 
     public GameObject ghost;
+    public float WaitTime;
     private GameObject SpawnedGhost;
+    private GameObject Water;
     public int deathCount;
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
@@ -58,55 +60,29 @@ public class CreateGhost : MonoBehaviour
         ghost.AddComponent<BoxCollider>();
         
         readyToThrow=true;
+         StartCoroutine(Spawner());
         
     }
     void Update()
     {
         cameraPosition = Camera.main.transform.position;
-       if (SpawnedGhost == null)
+
+       
+        if (SpawnedGhost != null)
         {
-
-           // SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
-           //SpawnedGhost.AddComponent<BoxCollider>();
-           
-
-
-            Vector3 randposition;
-            //randposition.x = cameraPosition.x + 1;
-            //randposition.y = cameraPosition.y +1;
-            //randposition.z = cameraPosition.z;
-            float distanceFromCamera = 5f; 
-            randposition = cameraPosition + Camera.main.transform.forward * distanceFromCamera;
-            SpawnedGhost = Instantiate(ghost, randposition, Camera.main.transform.rotation);
-
-            
-
-            lookCamera();
-        }
-
-        //if (SpawnedGhost != null)
-        //{
             SpawnedGhost.transform.LookAt(Camera.main.transform.position);
             SpawnedGhost.transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-          
-
-
-
             lookCamera();
-           
             checkKill();
             deathCheck();
-      // }
+        }
         //if (SpawnedGhost != null && SpawnedGhost.GetComponent<Collider>() == null)
         //{
            // SpawnedGhost.AddComponent<BoxCollider>();
             //SpawnedGhost.GetComponent<BoxCollider>().isTrigger = true;
 
         //}
-        if(SpawnedGhost != null){
-           SpawnedGhost.AddComponent<BoxCollider>(); 
-        }
+
 
        // if(Input.GetKeyDown(throwKey)&& readyToThrow && totalThrows > 0)
        // {
@@ -126,6 +102,36 @@ public class CreateGhost : MonoBehaviour
        }
 
     }
+        IEnumerator Spawner(){
+
+        if(SpawnedGhost == null){
+            yield return new WaitForSeconds(WaitTime);
+            spawn();
+        }
+            
+
+    }
+    void spawn(){
+                  // if (SpawnedGhost == null)
+           // {
+
+            // SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
+            //SpawnedGhost.AddComponent<BoxCollider>();
+            
+
+
+                Vector3 randposition;
+                //randposition.x = cameraPosition.x + 1;
+                //randposition.y = cameraPosition.y +1;
+                //randposition.z = cameraPosition.z;
+                float distanceFromCamera = 5f; 
+                randposition = cameraPosition + Camera.main.transform.forward * distanceFromCamera;
+                SpawnedGhost = Instantiate(ghost, randposition, Camera.main.transform.rotation);
+                SpawnedGhost.AddComponent<BoxCollider>(); 
+                lookCamera();
+
+       // }
+    }
     void Throw()
     {
          Debug.Log("Throw() function called.");
@@ -133,7 +139,6 @@ public class CreateGhost : MonoBehaviour
 
         readyToThrow = false;
         
-
         GameObject projectile = Instantiate(holywater,cameraPosition,  Camera.main.transform.rotation);
        
         Debug.Log("Projectile instantiated.");
@@ -145,8 +150,9 @@ public class CreateGhost : MonoBehaviour
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
         totalThrows--;
-
+        //Water = projectile;
         Invoke(nameof(ResetThrow), throwCooldown);
+        //checkKill();
     } 
 
     void ResetThrow()
@@ -169,32 +175,23 @@ public class CreateGhost : MonoBehaviour
 
 
      void checkKill(){
-
-         if (Input.touchCount > 0)
-         {
-             Touch touch = Input.GetTouch(0);
-             if (touch.phase == TouchPhase.Began)
-             {
-                 List<ARRaycastHit> hits = new List<ARRaycastHit>();
-                
-                 if(_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-                 {
-                     Pose hitPose = hits[0].pose;
-                     Vector3 ghostPosition = SpawnedGhost.transform.position;
-
-                     if (Vector3.Distance(hitPose.position, ghostPosition) < 0.1f)
-                     {
-                         Destroy(SpawnedGhost);
-                         SpawnedGhost = null;
-
-                        
-                        
-                           
-                     }
-                 }
-             }
-
-         }  
+                    //  Vector3 ghostPosition = SpawnedGhost.transform.position;
+                    // Vector3 waterPosition = Water.transform.position;
+                    //  if (Vector3.Distance(waterPosition, ghostPosition) < 0.1)
+                    //  {
+                    //      Destroy(SpawnedGhost);
+                    //      SpawnedGhost = null;
+                    //  }
+        Collider[] hitColliders = Physics.OverlapSphere(SpawnedGhost.transform.position, 3);
+        foreach (var hitCollider in hitColliders)
+        {
+            if(hitCollider.gameObject != SpawnedGhost){
+                Destroy(SpawnedGhost);
+                SpawnedGhost = null;
+                StartCoroutine(Spawner());
+            }
+            
+        }
      }
 
     void deathCheck(){
