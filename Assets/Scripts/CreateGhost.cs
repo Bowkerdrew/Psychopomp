@@ -182,37 +182,6 @@ public class CreateGhost : MonoBehaviour
 
 
      void checkKill(){
-<<<<<<< HEAD
-
-         if (Input.touchCount > 0)
-         {
-             Touch touch = Input.GetTouch(0);
-             if (touch.phase == TouchPhase.Began)
-             {
-                 List<ARRaycastHit> hits = new List<ARRaycastHit>();
-                
-                 if(_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-                 {
-                     Pose hitPose = hits[0].pose;
-                     Vector3 ghostPosition = SpawnedGhost.transform.position;
-
-                     if (Vector3.Distance(hitPose.position, ghostPosition) < 0.1f)
-                     {
-                         Destroy(SpawnedGhost);
-                         SpawnedGhost = null;
-
-                        
-
-                     
-                        
-                           
-                     }
-                     
-                 }
-             }
-
-         }  
-=======
                     //  Vector3 ghostPosition = SpawnedGhost.transform.position;
                     // Vector3 waterPosition = Water.transform.position;
                     //  if (Vector3.Distance(waterPosition, ghostPosition) < 0.1)
@@ -232,7 +201,6 @@ public class CreateGhost : MonoBehaviour
             }
             
         }
->>>>>>> 9cead9da5c2adbb9e3bee9f16a5f381e13be0ec7
      }
     void winCheck(){
         if(kills >= deathCount){
