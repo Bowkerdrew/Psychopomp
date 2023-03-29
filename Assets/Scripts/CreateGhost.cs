@@ -13,10 +13,13 @@ public class CreateGhost : MonoBehaviour
     public float WaitTime;
     private GameObject SpawnedGhost;
     private GameObject Water;
+    public string MiniGame;
     public int deathCount;
+    private int kills;
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
     public float minThrowSwipeDistance;
+    
     private Vector2 touchStartPosition = Vector2.zero;
 
     [Header("References")]
@@ -30,8 +33,12 @@ public class CreateGhost : MonoBehaviour
 
     [Header("Throwing")]
     public KeyCode throwKey= KeyCode.Mouse0;
+
+    [Range(10f, 70f)]
     public float throwForce;
     public float throwUpwardForce;
+
+    public float destroyDistance = 1f;
 
     bool readyToThrow;
 
@@ -182,24 +189,31 @@ public class CreateGhost : MonoBehaviour
                     //      Destroy(SpawnedGhost);
                     //      SpawnedGhost = null;
                     //  }
-        Collider[] hitColliders = Physics.OverlapSphere(SpawnedGhost.transform.position, 3);
+        Collider[] hitColliders = Physics.OverlapSphere(SpawnedGhost.transform.position, destroyDistance);
         foreach (var hitCollider in hitColliders)
         {
             if(hitCollider.gameObject != SpawnedGhost){
                 Destroy(SpawnedGhost);
                 SpawnedGhost = null;
+                kills++;
+                winCheck();
                 StartCoroutine(Spawner());
             }
             
         }
      }
+    void winCheck(){
+        if(kills >= deathCount){
+            SceneManager.LoadScene(MiniGame);
+        }
 
+    }
     void deathCheck(){
         if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.2){
             SceneManager.LoadScene("Death");
         }
     }
-    public float destroyDistance = 1f;
+    
 
     void OnTriggerEnter(Collider other)
     {
