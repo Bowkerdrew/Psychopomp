@@ -16,7 +16,7 @@ public class CreateGhost : MonoBehaviour
     private Vector2 touchPosition;
     public float minThrowSwipeDistance;
     private Vector2 touchStartPosition = Vector2.zero;
-
+     
     [Header("References")]
     public Transform cam;
     public Transform attackPoint;
@@ -188,9 +188,12 @@ public class CreateGhost : MonoBehaviour
                          SpawnedGhost = null;
 
                         
+
+                     
                         
                            
                      }
+                     
                  }
              }
 
@@ -208,12 +211,13 @@ public class CreateGhost : MonoBehaviour
     {
         if (other.gameObject.CompareTag("holywater"))
         {
-            float distance = Vector3.Distance(transform.position, other.transform.position);
+           float distance = Vector3.Distance(transform.position, other.transform.position);
             if (distance < destroyDistance)
             {
                 Destroy(SpawnedGhost);
             }
         }
+       
         
       
     }
