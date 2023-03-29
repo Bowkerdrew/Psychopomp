@@ -35,6 +35,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TermView.unity
     guid: 8f5dafdf1d65b974aa37d3e86da9fb08
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: 82361aa432d3f024394b469271eea626
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: f96ffead08b8e09428e150d7ed0777f4
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: 391dc6cc143f9d54c98a88da719df688
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

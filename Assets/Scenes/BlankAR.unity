@@ -723,20 +723,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a0676605f014a42bbf12a19cc707c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 6150615466889157324, guid: debaf4bc757e8a24dbd473a6fc3e6f13, type: 3}
-  deathCount: 0
+  ghost: {fileID: 8457597106363572928, guid: b86c0a655b3d314469e2e1c0197d71bf, type: 3}
+  WaitTime: 2
+  MiniGame: MainMenu
+  deathCount: 3
   minThrowSwipeDistance: 0
   cam: {fileID: 1354141930}
   attackPoint: {fileID: 1942481793}
   holywater: {fileID: 7399751600500998156, guid: 390c036231b2c2e4b952e0a7da3de8f5,
     type: 3}
-  totalThrows: 100
+  totalThrows: 98
   throwCooldown: 0.1
   throwKey: 0
   throwForce: 70
   throwUpwardForce: 0
+  destroyDistance: 0.1
   speed: 0.5
-  destroyDistance: 1
 --- !u!114 &1659859602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RaycastPrefab: {fileID: 6150615466889157324, guid: debaf4bc757e8a24dbd473a6fc3e6f13,
+  m_RaycastPrefab: {fileID: 8457597106363572928, guid: b86c0a655b3d314469e2e1c0197d71bf,
     type: 3}
 --- !u!114 &1659859603
 MonoBehaviour:
