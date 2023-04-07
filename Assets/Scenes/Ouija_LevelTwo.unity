@@ -540,7 +540,7 @@ MonoBehaviour:
   - {fileID: 1701651958}
   - {fileID: 909060497}
   - {fileID: 280038785}
-  win: LevelMenu
+  win: WinScene
   speed: 1
   timebetween: 2
 --- !u!1 &1305359612
