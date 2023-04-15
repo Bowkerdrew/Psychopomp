@@ -44,6 +44,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelThree.unity
     guid: 391dc6cc143f9d54c98a88da719df688
+  - enabled: 1
+    path: Assets/Scenes/Ouija_LevelOne.unity
+    guid: 941f76ae779e0f44da61a797aca676a4
+  - enabled: 1
+    path: Assets/Scenes/Ouija_LevelThree.unity
+    guid: 439eeb25b09a3aa46a378d7584b7f9f0
+  - enabled: 1
+    path: Assets/Scenes/Ouija_LevelTwo.unity
+    guid: cda295b42ec83bb47a3f3e90abc7ada1
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: e6af28fd2067f4e468411724fd18f355
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

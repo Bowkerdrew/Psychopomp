@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghost: {fileID: 400196907982691408, guid: 24a91d60fd592ff4a97cbdf36e22c770, type: 3}
   WaitTime: 2
-  MiniGame: MainMenu
+  MiniGame: Ouija_LevelThree
   deathCount: 6
   minThrowSwipeDistance: 0
   cam: {fileID: 1354141930}
