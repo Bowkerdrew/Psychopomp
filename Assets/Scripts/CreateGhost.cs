@@ -4,11 +4,17 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+
 
 [RequireComponent(typeof(ARRaycastManager))]
 public class CreateGhost : MonoBehaviour
 {
-
+    
+    TextMeshProUGUI scoreText;
+    GameObject ScoreBoardUI;
+    public static int score;
     public GameObject ghost;
     public float WaitTime;
     private GameObject SpawnedGhost;
@@ -63,7 +69,8 @@ public class CreateGhost : MonoBehaviour
     }
     void Start()
     {
-        
+        ScoreBoardUI = GameObject.FindGameObjectWithTag("ScoreCanvas");
+        scoreText = GameObject.FindGameObjectWithTag("ScoreOnBanner").GetComponent<TextMeshProUGUI>();
         ghost.AddComponent<BoxCollider>();
         
         readyToThrow=true;
@@ -72,6 +79,7 @@ public class CreateGhost : MonoBehaviour
     }
     void Update()
     {
+        scoreText.text= "Kills: " + score.ToString();
         cameraPosition = Camera.main.transform.position;
 
        
@@ -107,6 +115,8 @@ public class CreateGhost : MonoBehaviour
             Throw();
             }
        }
+
+       
 
     }
         IEnumerator Spawner(){
@@ -198,9 +208,13 @@ public class CreateGhost : MonoBehaviour
                 kills++;
                 winCheck();
                 StartCoroutine(Spawner());
+               score++;
+               scoreText.text = "Kills: " + score.ToString();
             }
             
         }
+        
+
      }
     void winCheck(){
         if(kills >= deathCount){
@@ -229,6 +243,8 @@ public class CreateGhost : MonoBehaviour
         
       
     }
+     
+    
     
 }
 
