@@ -75,6 +75,7 @@ public class CreateGhost : MonoBehaviour
         
         readyToThrow=true;
          StartCoroutine(Spawner());
+        score=0;
         
     }
     void Update()
@@ -224,8 +225,10 @@ public class CreateGhost : MonoBehaviour
     }
     void deathCheck(){
         if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.2){
+            score=0;
             SceneManager.LoadScene("Death");
         }
+        
     }
     
 
