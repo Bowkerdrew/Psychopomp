@@ -1269,7 +1269,7 @@ MonoBehaviour:
   throwKey: 0
   throwForce: 70
   throwUpwardForce: 0
-  destroyDistance: 0.3
+  destroyDistance: 0.7
   speed: 0.5
 --- !u!114 &1659859602
 MonoBehaviour:
