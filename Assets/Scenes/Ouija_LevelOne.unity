@@ -645,8 +645,8 @@ MonoBehaviour:
   - {fileID: 307082524}
   - {fileID: 1701651958}
   win: LevelMenu
-  speed: 1
-  timebetween: 2
+  speed: 0.5
+  waittime: 1
 --- !u!1 &1305359612
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,22 +11,23 @@ public class Ouija : MonoBehaviour
     public GameObject[] locations;
 
     public string win;
-    public int speed;
+    public float speed;
     private int i = 0;
-    public int timebetween;
+    public int waittime;
+    private bool startpause = false;
     // Start is called before the first frame update
     void Start()
     {
-       // StartCoroutine(move());
-
+       // ;
+        StartCoroutine(wait());
     }
 
     // Update is called once per frame
     void Update()
     {
-
         
-        if (Input.touchCount > 0)
+        
+        if (Input.touchCount > 0 && startpause)
         {
          Planchette.transform.position = Vector3.Lerp(Planchette.transform.position, locations[i].transform.position, speed*Time.deltaTime);
         if(Vector3.Distance(Planchette.transform.position, locations[i].transform.position) < 0.2)
@@ -53,13 +54,9 @@ public class Ouija : MonoBehaviour
         }
     }
 
-    IEnumerator move(){
-        yield return new WaitForSeconds(5);
-        // foreach(GameObject location in locations){
-        //     Planchette.transform.position = Vector3.Lerp(Planchette.transform.position, location.transform.position, speed*Time.deltaTime);
-        //     yield return new WaitForSeconds(timebetween);
-        // }
-            
+    IEnumerator wait(){
+        yield return new WaitForSeconds(waittime);
+        startpause = true;
 
     }
 }

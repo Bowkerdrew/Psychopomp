@@ -647,8 +647,8 @@ MonoBehaviour:
   - {fileID: 909060497}
   - {fileID: 280038785}
   win: WinScene
-  speed: 1
-  timebetween: 2
+  speed: 0.6
+  waittime: 1
 --- !u!1 &1305359612
 GameObject:
   m_ObjectHideFlags: 0
