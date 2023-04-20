@@ -291,16 +291,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: I accept
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6cfc624c860f38b41aa6b8d2545417e2, type: 2}
-  m_sharedMaterial: {fileID: -606741254190015195, guid: 6cfc624c860f38b41aa6b8d2545417e2,
+  m_fontAsset: {fileID: 11400000, guid: a90e1092486d7184a999494e967528ac, type: 2}
+  m_sharedMaterial: {fileID: -3424732373329565766, guid: a90e1092486d7184a999494e967528ac,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278419400
-  m_fontColor: {r: 0.78431374, g: 0.49803922, b: 0.011764706, a: 1}
+    rgba: 4281085988
+  m_fontColor: {r: 0.14117648, g: 0.1882353, b: 0.17254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1299,16 +1299,16 @@ MonoBehaviour:
     was created using Termly's EULA Generator (https://termly.io/products/eula-generator/)
     ."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6cfc624c860f38b41aa6b8d2545417e2, type: 2}
-  m_sharedMaterial: {fileID: -606741254190015195, guid: 6cfc624c860f38b41aa6b8d2545417e2,
+  m_fontAsset: {fileID: 11400000, guid: 18422560cf398b64c8da13c3ac8c8d39, type: 2}
+  m_sharedMaterial: {fileID: -5957507708012498548, guid: 18422560cf398b64c8da13c3ac8c8d39,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278419400
-  m_fontColor: {r: 0.78431374, g: 0.49803922, b: 0.011764706, a: 1}
+    rgba: 4281085988
+  m_fontColor: {r: 0.14117648, g: 0.1882353, b: 0.17254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1413,7 +1413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -801}
+  m_AnchoredPosition: {x: 1, y: -909}
   m_SizeDelta: {x: 700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093509990
