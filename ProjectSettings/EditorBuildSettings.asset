@@ -56,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: e6af28fd2067f4e468411724fd18f355
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: e03709cdda0f8bd4496146b7b7ef7cec
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
