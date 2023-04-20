@@ -136,31 +136,17 @@ extern void Quit__ctor_m3F91DC1CD69CEDC58473E2984694380137C228C0 (void);
 extern void SceneLoader_levelSelect_mD076132657DB0B583EE1B716E32B57FD911EE7EB (void);
 // 0x0000003E System.Void SceneLoader::.ctor()
 extern void SceneLoader__ctor_m2248766DF38AF07562AD31501C7275B8DF1B7D29 (void);
-// 0x0000003F System.Void NewBehaviourScript::Start()
-extern void NewBehaviourScript_Start_mDEAA416D3A6676A79851DDF6B62D676E53372A87 (void);
-// 0x00000040 System.Collections.IEnumerator NewBehaviourScript::HideText()
-extern void NewBehaviourScript_HideText_mA434435896946E847D52683E6638AE6245C3BD41 (void);
-// 0x00000041 System.Void NewBehaviourScript::Update()
-extern void NewBehaviourScript_Update_m68CAC9D7524B9FA1DFCA3F99BA694CD73147209B (void);
-// 0x00000042 System.Void NewBehaviourScript::.ctor()
-extern void NewBehaviourScript__ctor_mD2E080DE77BCDB61B6D2EC8AD996FAE611B97F3C (void);
-// 0x00000043 System.Void NewBehaviourScript/<HideText>d__3::.ctor(System.Int32)
-extern void U3CHideTextU3Ed__3__ctor_m868415479B24B4D58D718758C7EAA1D4D5E269D9 (void);
-// 0x00000044 System.Void NewBehaviourScript/<HideText>d__3::System.IDisposable.Dispose()
-extern void U3CHideTextU3Ed__3_System_IDisposable_Dispose_m20B9B721FDAA55986E9448D0E83AE7448FF92D59 (void);
-// 0x00000045 System.Boolean NewBehaviourScript/<HideText>d__3::MoveNext()
-extern void U3CHideTextU3Ed__3_MoveNext_m5A11FA226A8464F8FA6DBA9255D5B3B6FB9F1969 (void);
-// 0x00000046 System.Object NewBehaviourScript/<HideText>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CHideTextU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9994D3165E600CC9E2300965839C8BC65198FFB6 (void);
-// 0x00000047 System.Void NewBehaviourScript/<HideText>d__3::System.Collections.IEnumerator.Reset()
-extern void U3CHideTextU3Ed__3_System_Collections_IEnumerator_Reset_m930F67494E28C923C55E52A8279ABF43D5F4DE92 (void);
-// 0x00000048 System.Object NewBehaviourScript/<HideText>d__3::System.Collections.IEnumerator.get_Current()
-extern void U3CHideTextU3Ed__3_System_Collections_IEnumerator_get_Current_mA37FFB31E0E5AF753214AA35264A95AC639DD23C (void);
-// 0x00000049 System.Void TapDisapear::Disapear()
+// 0x0000003F System.Void TextDisappear::Start()
+extern void TextDisappear_Start_m2AE1094F983639806B2E07D06D300B471CC1A0FD (void);
+// 0x00000040 System.Void TextDisappear::HideText()
+extern void TextDisappear_HideText_m75AAE7326FC42A4C322660D95678C82E703D95C9 (void);
+// 0x00000041 System.Void TextDisappear::.ctor()
+extern void TextDisappear__ctor_mB05CCEAB7E3F50748521F3C32E051A76E9C4A70C (void);
+// 0x00000042 System.Void TapDisapear::Disapear()
 extern void TapDisapear_Disapear_mA67FDE5DAFC14D8CBC0D103FFCBAE06003B885C6 (void);
-// 0x0000004A System.Void TapDisapear::.ctor()
+// 0x00000043 System.Void TapDisapear::.ctor()
 extern void TapDisapear__ctor_mFECC96232DDFB309DD47668A2E005DB9F99C8A3C (void);
-static Il2CppMethodPointer s_methodPointers[74] = 
+static Il2CppMethodPointer s_methodPointers[67] = 
 {
 	Audio_Start_m97991E7F58963E4478EDB93862B7D3B86CC37893,
 	Audio_Update_m984ECC185C811C50694A9E3315454C5F3BB5678F,
@@ -224,20 +210,13 @@ static Il2CppMethodPointer s_methodPointers[74] =
 	Quit__ctor_m3F91DC1CD69CEDC58473E2984694380137C228C0,
 	SceneLoader_levelSelect_mD076132657DB0B583EE1B716E32B57FD911EE7EB,
 	SceneLoader__ctor_m2248766DF38AF07562AD31501C7275B8DF1B7D29,
-	NewBehaviourScript_Start_mDEAA416D3A6676A79851DDF6B62D676E53372A87,
-	NewBehaviourScript_HideText_mA434435896946E847D52683E6638AE6245C3BD41,
-	NewBehaviourScript_Update_m68CAC9D7524B9FA1DFCA3F99BA694CD73147209B,
-	NewBehaviourScript__ctor_mD2E080DE77BCDB61B6D2EC8AD996FAE611B97F3C,
-	U3CHideTextU3Ed__3__ctor_m868415479B24B4D58D718758C7EAA1D4D5E269D9,
-	U3CHideTextU3Ed__3_System_IDisposable_Dispose_m20B9B721FDAA55986E9448D0E83AE7448FF92D59,
-	U3CHideTextU3Ed__3_MoveNext_m5A11FA226A8464F8FA6DBA9255D5B3B6FB9F1969,
-	U3CHideTextU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9994D3165E600CC9E2300965839C8BC65198FFB6,
-	U3CHideTextU3Ed__3_System_Collections_IEnumerator_Reset_m930F67494E28C923C55E52A8279ABF43D5F4DE92,
-	U3CHideTextU3Ed__3_System_Collections_IEnumerator_get_Current_mA37FFB31E0E5AF753214AA35264A95AC639DD23C,
+	TextDisappear_Start_m2AE1094F983639806B2E07D06D300B471CC1A0FD,
+	TextDisappear_HideText_m75AAE7326FC42A4C322660D95678C82E703D95C9,
+	TextDisappear__ctor_mB05CCEAB7E3F50748521F3C32E051A76E9C4A70C,
 	TapDisapear_Disapear_mA67FDE5DAFC14D8CBC0D103FFCBAE06003B885C6,
 	TapDisapear__ctor_mFECC96232DDFB309DD47668A2E005DB9F99C8A3C,
 };
-static const int32_t s_InvokerIndices[74] = 
+static const int32_t s_InvokerIndices[67] = 
 {
 	5442,
 	5442,
@@ -302,15 +281,8 @@ static const int32_t s_InvokerIndices[74] =
 	4337,
 	5442,
 	5442,
-	5336,
 	5442,
 	5442,
-	4311,
-	5442,
-	5247,
-	5336,
-	5442,
-	5336,
 	5442,
 	5442,
 };
@@ -318,7 +290,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	74,
+	67,
 	s_methodPointers,
 	0,
 	NULL,

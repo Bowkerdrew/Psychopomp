@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218, y: 62}
+  m_AnchoredPosition: {x: 198, y: 62}
   m_SizeDelta: {x: 274.9506, y: 150.895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351783485
@@ -182,9 +182,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Quick Tutorial \n\nTap on screen to kill Ghost\nYou win a level once you
-    kill the ghost 3 times \nThe amount of time you need to kill the ghost will go
-    up  level by level "
+  m_text: "Quick Tutorial \n\nAim and tap on screen to kill Ghost.\nYou win a level
+    once you kill the ghost 3 times. \nThe amount of times you need to kill the ghost
+    will go up level by level "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6cfc624c860f38b41aa6b8d2545417e2, type: 2}
   m_sharedMaterial: {fileID: -606741254190015195, guid: 6cfc624c860f38b41aa6b8d2545417e2,
@@ -271,9 +271,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 351783483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a95f4de6475dab64a94dfcd6f9a75913, type: 3}
+  m_Script: {fileID: 11500000, guid: 4000ea72c4f5738438eec2d5874d58dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayTime: 5
 --- !u!1 &421793406
 GameObject:
   m_ObjectHideFlags: 0
