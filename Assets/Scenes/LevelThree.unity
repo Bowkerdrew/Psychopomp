@@ -819,16 +819,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: "  KILLS:\n      0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dd6007cbd85cf764fa1184a354c527c3, type: 2}
-  m_sharedMaterial: {fileID: 2164918731468198021, guid: dd6007cbd85cf764fa1184a354c527c3,
+  m_fontAsset: {fileID: 11400000, guid: 4dd05c8fc7afefb47849467e4f8729a8, type: 2}
+  m_sharedMaterial: {fileID: 5284185879064195941, guid: 4dd05c8fc7afefb47849467e4f8729a8,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278419400
-  m_fontColor: {r: 0.78431374, g: 0.49803922, b: 0.011764706, a: 1}
+    rgba: 4288325251
+  m_fontColor: {r: 0.5137255, g: 0.6509804, b: 0.6039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

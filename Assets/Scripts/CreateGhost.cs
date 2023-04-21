@@ -13,11 +13,15 @@ public class CreateGhost : MonoBehaviour
 {
     
     TextMeshProUGUI scoreText;
-    TextMeshProUGUI bottleText;
+    //TextMeshProUGUI bottleText;
+    
     GameObject ScoreBoardUI;
-    GameObject BottleCountUI;
+   //GameObject BottleCountUI;
+ 
+   
     public static int score;
-    public static int bottle;
+   //public static int bottle;
+ 
     public GameObject ghost;
     public float WaitTime;
     private GameObject SpawnedGhost;
@@ -74,20 +78,25 @@ public class CreateGhost : MonoBehaviour
     {
         ScoreBoardUI = GameObject.FindGameObjectWithTag("ScoreCanvas");
         scoreText = GameObject.FindGameObjectWithTag("ScoreOnBanner").GetComponent<TextMeshProUGUI>();
-        BottleCountUI=GameObject.FindGameObjectWithTag("BottlesCanvas");
-        bottleText=GameObject.FindGameObjectWithTag("BottlesAmount").GetComponent<TextMeshProUGUI>();
+       // BottleCountUI=GameObject.FindGameObjectWithTag("BottlesCanvas");
+       // bottleText=GameObject.FindGameObjectWithTag("BottlesAmount").GetComponent<TextMeshProUGUI>();
+
+       
+       
         ghost.AddComponent<BoxCollider>();
         
         readyToThrow=true;
-         StartCoroutine(Spawner());
+        StartCoroutine(Spawner());
         score=0;
-        bottle= 5;
+        //bottle=5;
+        
     }
     void Update()
     {
         
         scoreText.text= "Kills: " + score.ToString();
-        bottleText.text= "Bottles: "  + bottle.ToString();
+        //bottleText.text= "Bottles: "  + bottle.ToString();
+        
         cameraPosition = Camera.main.transform.position;
         
 
@@ -160,7 +169,7 @@ public class CreateGhost : MonoBehaviour
     }
     void Throw()
     {
-        if (bottle > 0 ){
+       // if (bottle > 0  ){
          Debug.Log("Throw() function called.");
    
 
@@ -177,12 +186,12 @@ public class CreateGhost : MonoBehaviour
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
         totalThrows--;
-        bottle--;
-        bottleText.text = "Bottles: " + bottle.ToString();
-        //Water = projectile;
+        //bottle--;
+        //bottleText.text= "Bottles: "  + bottle.ToString();
         Invoke(nameof(ResetThrow), throwCooldown);
         //checkKill();
-        }
+        //}
+        
     } 
 
     void ResetThrow()
