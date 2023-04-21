@@ -15,6 +15,7 @@ public class Ouija : MonoBehaviour
     private int i = 0;
     public int waittime;
     private bool startpause = false;
+    
     // Start is called before the first frame update
     void Start()
     {
