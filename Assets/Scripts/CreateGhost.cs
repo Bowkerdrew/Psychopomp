@@ -89,9 +89,11 @@ public class CreateGhost : MonoBehaviour
         scoreText.text= "Kills: " + score.ToString();
         bottleText.text= "Bottles: "  + bottle.ToString();
         cameraPosition = Camera.main.transform.position;
+        if (bottle == 0)
+        {
+            SceneManager.LoadScene("Death");
+        }
         
-
-       
         if (SpawnedGhost != null)
         {
             SpawnedGhost.transform.LookAt(Camera.main.transform.position);
@@ -236,7 +238,7 @@ public class CreateGhost : MonoBehaviour
 
     }
     void deathCheck(){
-        if(Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.2){
+        if(SpawnedGhost != null && Vector3.Distance(SpawnedGhost.transform.position, cameraPosition) < 0.2){
             score=0;
             SceneManager.LoadScene("Death");
         }
