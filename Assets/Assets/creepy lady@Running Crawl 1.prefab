@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: -986669580381877461}
   - component: {fileID: -3644143755433005772}
   - component: {fileID: 66132812460591808}
-  - component: {fileID: 977292266850248110}
+  - component: {fileID: -7467944007059805532}
   m_Layer: 0
   m_Name: creepy lady@Running Crawl 1
   m_TagString: Untagged
@@ -1154,7 +1154,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &977292266850248110
+--- !u!65 &-7467944007059805532
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

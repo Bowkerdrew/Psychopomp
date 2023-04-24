@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63, y: 249}
+  m_AnchoredPosition: {x: 22, y: 249}
   m_SizeDelta: {x: 350.2752, y: 70.314}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318348211
@@ -675,8 +675,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 87, y: 0}
-  m_SizeDelta: {x: 3503.8926, y: 1342.3601}
+  m_AnchoredPosition: {x: -40.820312, y: 77}
+  m_SizeDelta: {x: 5307.9707, y: 2525.482}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116954628
 MonoBehaviour:
@@ -691,14 +691,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7c1c52893aaacf14187417e3b34c2b26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c16fc7ff2cecbc145b33b2558ae12384, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -946,7 +946,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1474111259}
   - component: {fileID: 1474111258}
-  - component: {fileID: 1474111260}
   - component: {fileID: 1474111261}
   m_Layer: 0
   m_Name: EventSystem
@@ -985,22 +984,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1474111260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474111256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814f3fe890b8d254090963599f970c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelButtons:
-  - {fileID: 2093509990}
-  - {fileID: 318348212}
-  - {fileID: 1607719303}
 --- !u!114 &1474111261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,7 +1063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63, y: 7}
+  m_AnchoredPosition: {x: 22, y: 7}
   m_SizeDelta: {x: 350.2752, y: 70.314}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1607719302
@@ -1611,7 +1594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63, y: 462}
+  m_AnchoredPosition: {x: 22, y: 462}
   m_SizeDelta: {x: 350.2752, y: 70.314}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093509990

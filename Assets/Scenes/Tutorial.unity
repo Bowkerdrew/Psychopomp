@@ -467,7 +467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192, y: 546}
+  m_AnchoredPosition: {x: 123, y: 546}
   m_SizeDelta: {x: 200, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711661158
@@ -492,7 +492,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '
 
-    Tutorial'
+    Quick Tutorial'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 107e2db4914330e41ba1b998107a0e45, type: 2}
   m_sharedMaterial: {fileID: 1045946694650807928, guid: 107e2db4914330e41ba1b998107a0e45,
@@ -520,8 +520,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -929,8 +929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15, y: -118.75}
-  m_SizeDelta: {x: 5406.4307, y: -237.4919}
+  m_AnchoredPosition: {x: -57.27368, y: -93.38599}
+  m_SizeDelta: {x: 10056.51, y: 698.1605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1963317835
 MonoBehaviour:
@@ -945,14 +945,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5188679, g: 0.5066305, b: 0.5066305, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7c1c52893aaacf14187417e3b34c2b26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c16fc7ff2cecbc145b33b2558ae12384, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1028,10 +1028,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n   Welcome to the Ghost Hunter game \nTo start aim and tap the  screen
-    to kill the ghost You will need to kill it three times to advance to the mini
-    game but be careful you only have a limited number of bottles to use and if you
-    run out before the ghost is dead you lose"
+  m_text: "\n  Welcome to the Ghost                               Hunter game \nTo
+    start aim and tap the  screen to kill the ghost You will need to kill it three
+    times to advance to the mini game but be careful you only have a limited number
+    of bottles to use and if you run out before the ghost is dead you lose"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 107e2db4914330e41ba1b998107a0e45, type: 2}
   m_sharedMaterial: {fileID: 1045946694650807928, guid: 107e2db4914330e41ba1b998107a0e45,
@@ -1054,13 +1054,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 97690656
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

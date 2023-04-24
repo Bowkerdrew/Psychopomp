@@ -15296,6 +15296,13 @@ struct CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636  : public MonoBehav
 	float ___speed_32;
 };
 
+// DeathScript
+struct DeathScript_tE01563AADB22A33D18FDAC767CDA880FFB1199F0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// System.Int32 DeathScript::bottleCount
+	int32_t ___bottleCount_4;
+};
+
 // DontDestroyaudio
 struct DontDestroyaudio_tE67FCAC43FACB44D55EC0C616A8FA27244A4F0F1  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -22649,6 +22656,10 @@ struct CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636_StaticFields
 
 // CreateGhost
 
+// DeathScript
+
+// DeathScript
+
 // DontDestroyaudio
 
 // DontDestroyaudio
@@ -26476,6 +26487,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4648[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4649[30] = 
 {
 	static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___scoreText_4)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___bottleText_5)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___ScoreBoardUI_6)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___BottleCountUI_7)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636_StaticFields, ___score_8)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636_StaticFields, ___bottle_9)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___ghost_10)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___WaitTime_11)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___SpawnedGhost_12)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___Water_13)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___MiniGame_14)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___deathCount_15)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___kills_16)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ____arRaycastManager_17)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___touchPosition_18)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___minThrowSwipeDistance_19)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___touchStartPosition_20)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___cam_21)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___attackPoint_22)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___holywater_23)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___totalThrows_24)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___throwCooldown_25)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___throwKey_26)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___throwForce_27)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___throwUpwardForce_28)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___destroyDistance_29)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___readyToThrow_30)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___cameraPosition_31)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636, ___speed_32)),static_cast<int32_t>(offsetof(CreateGhost_t9D406CD4C961E6E867C1A3D9BB3B53450FB3E636_StaticFields, ___hits_33)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4650[1] = 
+{
+	static_cast<int32_t>(offsetof(DeathScript_tE01563AADB22A33D18FDAC767CDA880FFB1199F0, ___bottleCount_4)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4651[3] = 
 {
 	static_cast<int32_t>(offsetof(U3CwaitU3Ed__9_t2C5340A1399CB07BDA69ECE172DCB4E624E381B1, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CwaitU3Ed__9_t2C5340A1399CB07BDA69ECE172DCB4E624E381B1, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CwaitU3Ed__9_t2C5340A1399CB07BDA69ECE172DCB4E624E381B1, ___U3CU3E4__this_2)),};
