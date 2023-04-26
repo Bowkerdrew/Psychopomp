@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ouija_LevelTwo.unity
     guid: cda295b42ec83bb47a3f3e90abc7ada1
   - enabled: 1
-    path: Assets/Scenes/Win.unity
+    path: Assets/Scenes/WinScene.unity
     guid: e6af28fd2067f4e468411724fd18f355
   - enabled: 1
     path: Assets/Scenes/Main.unity

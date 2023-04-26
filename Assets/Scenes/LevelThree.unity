@@ -1452,7 +1452,7 @@ MonoBehaviour:
   throwForce: 70
   throwUpwardForce: 0
   destroyDistance: 0.7
-  speed: 2
+  speed: 1.5
 --- !u!114 &1659859602
 MonoBehaviour:
   m_ObjectHideFlags: 0
