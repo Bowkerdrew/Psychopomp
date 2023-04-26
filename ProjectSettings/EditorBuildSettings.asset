@@ -20,21 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Death.unity
     guid: d500566d7d3216144b60bcdba4bcf545
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: d3c9d9d87a9423e47b438bc73d2f8f1a
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LevelOne.unity
     guid: 82361aa432d3f024394b469271eea626
@@ -54,14 +39,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Ouija_LevelTwo.unity
     guid: cda295b42ec83bb47a3f3e90abc7ada1
   - enabled: 1
-    path: Assets/Scenes/WinScene.unity
+    path: Assets/Scenes/Win.unity
     guid: e6af28fd2067f4e468411724fd18f355
   - enabled: 1
     path: Assets/Scenes/Main.unity
-    guid: e03709cdda0f8bd4496146b7b7ef7cec
+    guid: 423efbe157022af4a92ffbf085a96582
+  - enabled: 1
+    path: Assets/Scenes/TermView.unity
+    guid: 537f831142010894595cafbb44f8f062
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: ea0dec79f17a5de4b91097e9fe6964b2
+  - enabled: 1
+    path: Assets/Scenes/AboutUs.unity
+    guid: 667956ca0765e4849924ee99df95c8b7
+  - enabled: 1
+    path: Assets/Scenes/PrivacyPolicy.unity
+    guid: fdfdad29a90f2dc4e9b527b5cbc5a87a
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
-    guid: ee69afe9e4910954b9eb56926e4b3e8b
+    guid: 11283b4001cce1441add71a3165d9ce7
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
