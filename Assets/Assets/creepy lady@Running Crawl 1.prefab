@@ -890,6 +890,7 @@ GameObject:
   - component: {fileID: 66132812460591808}
   - component: {fileID: -7467944007059805532}
   - component: {fileID: -6498408446219557703}
+  - component: {fileID: -2597865135296191196}
   m_Layer: 0
   m_Name: creepy lady@Running Crawl 1
   m_TagString: Untagged
@@ -1169,6 +1170,19 @@ BoxCollider:
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &-6498408446219557703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150615466889157324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &-2597865135296191196
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

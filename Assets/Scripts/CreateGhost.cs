@@ -82,10 +82,10 @@ public class CreateGhost : MonoBehaviour
          StartCoroutine(Spawner());
         score=0;
         bottle= 5;
+        
     }
     void Update()
     {
-        
         scoreText.text= "Kills: " + score.ToString();
         bottleText.text= "Bottles: "  + bottle.ToString();
         cameraPosition = Camera.main.transform.position;
@@ -102,18 +102,6 @@ public class CreateGhost : MonoBehaviour
             checkKill();
             deathCheck();
         }
-        //if (SpawnedGhost != null && SpawnedGhost.GetComponent<Collider>() == null)
-        //{
-           // SpawnedGhost.AddComponent<BoxCollider>();
-            //SpawnedGhost.GetComponent<BoxCollider>().isTrigger = true;
-
-        //}
-
-
-       // if(Input.GetKeyDown(throwKey)&& readyToThrow && totalThrows > 0)
-       // {
-           // Throw();
-       // }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
               touchStartPosition = Input.GetTouch(0).position;
@@ -126,9 +114,6 @@ public class CreateGhost : MonoBehaviour
             Throw();
             }
        }
-
-       
-
     }
         IEnumerator Spawner(){
 
@@ -139,26 +124,42 @@ public class CreateGhost : MonoBehaviour
             
 
     }
-    void spawn(){
-                  // if (SpawnedGhost == null)
-           // {
+    private bool isFirstSpawn = true;
 
-            // SpawnedGhost = Instantiate(ghost, Camera.main.transform.position, Camera.main.transform.rotation);
-            //SpawnedGhost.AddComponent<BoxCollider>();
-            
+    void spawn()
+    {
+        Vector3 spawnPosition;
 
+        if (isFirstSpawn) {
+            float distanceFromCamera = 5f;
+            spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * distanceFromCamera;
+            isFirstSpawn = false;
+        } else {
+            // Set minimum and maximum spawn distances from the player
+            float minSpawnDistance = 3f;
+            float maxSpawnDistance = 6f;
 
-                Vector3 randposition;
-                //randposition.x = cameraPosition.x + 1;
-                //randposition.y = cameraPosition.y +1;
-                //randposition.z = cameraPosition.z;
-                float distanceFromCamera = 5f; 
-                randposition = cameraPosition + Camera.main.transform.forward * distanceFromCamera;
-                SpawnedGhost = Instantiate(ghost, randposition, Camera.main.transform.rotation);
-                SpawnedGhost.AddComponent<BoxCollider>(); 
-                lookCamera();
+            // Generate random angles for rotation around the camera's forward vector
+            float randomHorizontalAngle = Random.Range(-45f, 45f); // Adjust this range to control the horizontal field of view
+            float randomVerticalAngle = Random.Range(-30f, 30f); // Adjust this range to control the vertical field of view
 
-       // }
+            // Calculate a random direction based on the camera's forward vector and the random angles
+            Quaternion randomRotation = Quaternion.Euler(randomVerticalAngle, randomHorizontalAngle, 0);
+            Vector3 randomDirection = randomRotation * Camera.main.transform.forward;
+
+            // Scale the random direction to a distance within the desired range
+            float randomDistance = Random.Range(minSpawnDistance, maxSpawnDistance);
+            Vector3 randomOffset = randomDirection * randomDistance;
+
+            // Add the random offset to the current camera position
+            spawnPosition = Camera.main.transform.position + randomOffset;
+            spawnPosition.y = 0.5f; // Adjust the Y value to match the desired height for the ghost
+        }
+
+        SpawnedGhost = Instantiate(ghost, spawnPosition, Quaternion.identity);
+        SpawnedGhost.AddComponent<BoxCollider>();
+        lookCamera();
+
     }
     void Throw()
     {
@@ -264,9 +265,3 @@ public class CreateGhost : MonoBehaviour
     
     
 }
-
-    
-
-
-
-
