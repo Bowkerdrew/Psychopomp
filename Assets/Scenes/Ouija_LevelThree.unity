@@ -618,6 +618,8 @@ MonoBehaviour:
   win: WinScene
   speed: 0.7
   waittime: 1
+  spelledName: BLAIR
+  InputScene: InputScene
 --- !u!1 &1305359612
 GameObject:
   m_ObjectHideFlags: 0

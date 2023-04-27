@@ -648,6 +648,8 @@ MonoBehaviour:
   win: WinScene
   speed: 0.6
   waittime: 1
+  spelledName: NORMAN
+  InputScene: InputScene
 --- !u!1 &1305359612
 GameObject:
   m_ObjectHideFlags: 0
