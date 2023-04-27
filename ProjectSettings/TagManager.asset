@@ -8,6 +8,10 @@ TagManager:
   - ScoreOnBanner
   - BottlesCanvas
   - BottlesAmount
+  - BottlesCanvas2
+  - BottlesAmount2
+  - BottlesCanvas3
+  - BottlesAmount3
   layers:
   - Default
   - TransparentFX
